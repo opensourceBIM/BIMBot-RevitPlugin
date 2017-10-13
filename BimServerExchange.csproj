@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{859859F2-DBFC-4E3A-936F-D084DC455679}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BimServerExchange</RootNamespace>
+    <AssemblyName>BimServerExchange</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug2016|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug2016\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;LIMITEDIFC;R2016</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug2016|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug2016\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release2016|AnyCPU'">
+    <OutputPath>bin\Release2016\</OutputPath>
+    <DefineConstants>TRACE;LIMITEDIFC;R2016</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release2016|x64'">
+    <OutputPath>bin\x64\Release2016\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug2018|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug2018\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;R2018</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug2018|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug2018\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release2018|AnyCPU'">
+    <OutputPath>bin\Release2018\</OutputPath>
+    <DefineConstants>TRACE;R2018</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release2018|x64'">
+    <OutputPath>bin\x64\Release2018\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug2017|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug2017\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;R2017</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug2017|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug2017\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release2017|AnyCPU'">
+    <OutputPath>bin\Release2017\</OutputPath>
+    <DefineConstants>TRACE;R2017</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release2017|x64'">
+    <OutputPath>bin\x64\Release2017\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdWindows">
+      <HintPath>..\_ThirdpartyDLLs\AdWindows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_ThirdpartyDLLs\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RevitAPI">
+      <HintPath>..\_ThirdpartyDLLs\$(Configuration)\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIIFC">
+      <HintPath>..\_ThirdpartyDLLs\$(Configuration)\RevitAPIIFC.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\_ThirdpartyDLLs\$(Configuration)\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutAddin.cs" />
+    <Compile Include="Commands\BimServerExportEventHandler.cs" />
+    <Compile Include="Commands\CmdBimServerExchange.cs" />
+    <Compile Include="Commands\CmdBimServerExport.cs" />
+    <Compile Include="Commands\CmdBimServerLogin.cs" />
+    <Compile Include="Commands\CmdIfcExporterAPI.cs" />
+    <Compile Include="Commands\CmdProcessingStatus.cs" />
+    <Compile Include="Commands\CmdServerInterface.cs" />
+    <Compile Include="ExportToBimServer.cs" />
+    <Compile Include="BimServerExchangeLoader.cs" />
+    <Compile Include="Commands\Commander.cs" />
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BimServerExchangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BimServerExchangeForm.Designer.cs">
+      <DependentUpon>BimServerExchangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BimServerExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BimServerExportForm.Designer.cs">
+      <DependentUpon>BimServerExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BimServerLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BimServerLoginForm.Designer.cs">
+      <DependentUpon>BimServerLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfirmationForm.Designer.cs">
+      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProcessingStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProcessingStatusForm.Designer.cs">
+      <DependentUpon>ProcessingStatusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IFCExporterAPI.cs" />
+    <Compile Include="Objects\AddProjectAsSubProjectRequest.cs" />
+    <Compile Include="Objects\AddProjectAsSubProjectResponse.cs" />
+    <Compile Include="Objects\AddProjectRequest.cs" />
+    <Compile Include="Objects\AddRootProjectResponse.cs" />
+    <Compile Include="Objects\CheckinRequest.cs" />
+    <Compile Include="Objects\CheckInResponse.cs" />
+    <Compile Include="Objects\CheckOutRequest.cs" />
+    <Compile Include="Objects\DownloadRequest.cs" />
+    <Compile Include="Objects\ExceptionResponse.cs" />
+    <Compile Include="Objects\GetDownloadDataRequest.cs" />
+    <Compile Include="Objects\GetExtendedDataRequest.cs" />
+    <Compile Include="Objects\GetExtendedDataResponse.cs" />
+    <Compile Include="Objects\GetFileRequest.cs" />
+    <Compile Include="Objects\GetFileResponse.cs" />
+    <Compile Include="Objects\GetProgressRequest.cs" />
+    <Compile Include="Objects\GetProgressResponse.cs" />
+    <Compile Include="Objects\GetProjectDeserializerResponse.cs" />
+    <Compile Include="Objects\GetProjectDeserializersRequest.cs" />
+    <Compile Include="Objects\GetFilesRequest.cs" />
+    <Compile Include="Objects\GetFilesResponse.cs" />
+    <Compile Include="Objects\GetProjectRequest.cs" />
+    <Compile Include="Objects\GetProjectResponse.cs" />
+    <Compile Include="Objects\GetProjectSerializerReponse.cs" />
+    <Compile Include="Objects\GetProjectSerializerRequest.cs" />
+    <Compile Include="Objects\IdResponse.cs" />
+    <Compile Include="Objects\LoginRequest.cs" />
+    <Compile Include="Objects\LoginResponse.cs" />
+    <Compile Include="Objects\LogoutRequest.cs" />
+    <Compile Include="Objects\LogoutResponse.cs" />
+    <Compile Include="Objects\SetRevisionTagRequest.cs" />
+    <Compile Include="OpenView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QuickExport.cs" />
+    <Compile Include="ResetConnection.cs" />
+    <Compile Include="Runtime\BimServerExchangeData.cs" />
+    <Compile Include="Runtime\ElementCollectionHelper.cs" />
+    <Compile Include="Runtime\ExtensionMethods.cs" />
+    <Compile Include="Runtime\IcnException.cs" />
+    <Compile Include="Runtime\IFCConfigurationManager.cs" />
+    <Compile Include="Runtime\IFCExporterConfiguration.cs" />
+    <Compile Include="Runtime\IFCExporterConfigurations.cs" />
+    <Compile Include="Runtime\IFCExporterLinkedFileData.cs" />
+    <Compile Include="Runtime\KnownProjects.cs" />
+    <Compile Include="Runtime\ProgressEventArgs.cs" />
+    <Compile Include="Runtime\RevitStatusText.cs" />
+    <Compile Include="Runtime\SharedInterface.cs" />
+    <Compile Include="Runtime\sUser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BimServerExchangeForm.resx">
+      <DependentUpon>BimServerExchangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BimServerExportForm.resx">
+      <DependentUpon>BimServerExportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BimServerLoginForm.resx">
+      <DependentUpon>BimServerLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfirmationForm.resx">
+      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProcessingStatusForm.resx">
+      <DependentUpon>ProcessingStatusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BimServerLogo.ico" />
+    <Content Include="Resources\BIMserver-Info.png" />
+    <Content Include="Resources\BiMserver-manager.png" />
+    <Content Include="Resources\BiMServer-Upload.png" />
+    <Content Include="Resources\BiMserver-View.png" />
+    <Content Include="Resources\BimServer.png" />
+    <Content Include="Resources\ButtonImage_Add.png" />
+    <EmbeddedResource Include="Resources\ExportTo.png" />
+    <Content Include="Resources\ButtonImage_Cancel.png" />
+    <Content Include="Resources\ButtonImage_Config.png" />
+    <Content Include="Resources\ButtonImage_IFC.png" />
+    <Content Include="Resources\ButtonImage_Open.png" />
+    <Content Include="Resources\ButtonImage_Revit.png" />
+    <Content Include="Resources\ImportFrom.png" />
+    <EmbeddedResource Include="Runtime\LicenseAgreement.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>D:\projects.svn\ICNShared\SigningTool\signtool.exe sign /f D:\projects.svn\ICNShared\SigningTool\icncert.pfx /p Nieuw#12 /t  "http://timestamp.verisign.com/scripts/timstamp.dll" "BimServerExchange.dll"
+copy $(TargetPath) ..\..\..\$(TargetFileName)
+copy $(TargetPath) "\\icndevelopment1\ICNGROUP\_Single Products Files\TNO\BimServer\BimServerEx\$(ConfigurationName)\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
