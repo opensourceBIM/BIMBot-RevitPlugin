@@ -9,6 +9,8 @@ using BimServerExchange.Runtime;
 using TextBox = System.Windows.Forms.TextBox;
 using ComboBox = System.Windows.Forms.ComboBox;
 using System.Diagnostics;
+using System.Drawing;
+
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable UnusedMember.Global
 
@@ -619,7 +621,9 @@ namespace BimServerExchange.Forms
 					Cmd.BimServerExchange.FillRevisionTree(null);
 					DownloadBtn.Enabled = false;
 				}
+
 				RevisionsGrp.Text = $@"Revisions in project {SelectedProjectLeaf}";
+				Cmd.BimServerExchange.HighlightSelectedProject(tree.SelectedNode);
 
 				return;
 			}

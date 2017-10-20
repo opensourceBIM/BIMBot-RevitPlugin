@@ -54,6 +54,7 @@ namespace BimServerExchange.Forms
 			this.ProjectsPnl = new System.Windows.Forms.Panel();
 			this.ProjectsGrp = new System.Windows.Forms.GroupBox();
 			this.ProjectsTree = new System.Windows.Forms.TreeView();
+			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.CopyProjectNameBtn = new System.Windows.Forms.Button();
 			this.ProjectDescLbl = new System.Windows.Forms.Label();
 			this.ProjectNameLbl = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@ namespace BimServerExchange.Forms
 			this.RevisionsGrp = new System.Windows.Forms.GroupBox();
 			this.RevisionsTree = new System.Windows.Forms.ListView();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.ButtonPnl.SuspendLayout();
 			this.OutputPnl.SuspendLayout();
 			this.ExportPnl.SuspendLayout();
@@ -318,6 +318,7 @@ namespace BimServerExchange.Forms
 			this.ProjectsTree.ContextMenuStrip = this.contextMenuStrip1;
 			this.ProjectsTree.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ProjectsTree.FullRowSelect = true;
+			this.ProjectsTree.HideSelection = false;
 			this.ProjectsTree.Location = new System.Drawing.Point(3, 19);
 			this.ProjectsTree.Name = "ProjectsTree";
 			this.ProjectsTree.Size = new System.Drawing.Size(361, 371);
@@ -325,6 +326,11 @@ namespace BimServerExchange.Forms
 			this.ProjectsTree.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.TreeView_Select);
 			this.ProjectsTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView_Select);
 			this.ProjectsTree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView_MouseClick);
+			// 
+			// contextMenuStrip1
+			// 
+			this.contextMenuStrip1.Name = "contextMenuStrip1";
+			this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
 			// 
 			// CopyProjectNameBtn
 			// 
@@ -360,18 +366,18 @@ namespace BimServerExchange.Forms
 			// 
 			this.ProjectDescEdt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.ProjectDescEdt.Location = new System.Drawing.Point(72, 47);
+			this.ProjectDescEdt.Location = new System.Drawing.Point(81, 47);
 			this.ProjectDescEdt.Name = "ProjectDescEdt";
-			this.ProjectDescEdt.Size = new System.Drawing.Size(291, 20);
+			this.ProjectDescEdt.Size = new System.Drawing.Size(282, 20);
 			this.ProjectDescEdt.TabIndex = 5;
 			// 
 			// ProjectNameEdt
 			// 
 			this.ProjectNameEdt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.ProjectNameEdt.Location = new System.Drawing.Point(72, 23);
+			this.ProjectNameEdt.Location = new System.Drawing.Point(81, 23);
 			this.ProjectNameEdt.Name = "ProjectNameEdt";
-			this.ProjectNameEdt.Size = new System.Drawing.Size(238, 20);
+			this.ProjectNameEdt.Size = new System.Drawing.Size(229, 20);
 			this.ProjectNameEdt.TabIndex = 4;
 			this.ProjectNameEdt.TextChanged += new System.EventHandler(this.TextEdit_Changed);
 			// 
@@ -472,9 +478,9 @@ namespace BimServerExchange.Forms
 			// 
 			this.IFCFormatCbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.IFCFormatCbx.Location = new System.Drawing.Point(69, 7);
+			this.IFCFormatCbx.Location = new System.Drawing.Point(78, 7);
 			this.IFCFormatCbx.Name = "IFCFormatCbx";
-			this.IFCFormatCbx.Size = new System.Drawing.Size(132, 21);
+			this.IFCFormatCbx.Size = new System.Drawing.Size(123, 21);
 			this.IFCFormatCbx.TabIndex = 6;
 			this.toolTip1.SetToolTip(this.IFCFormatCbx, "IFC format used do serialize and deserialize IFC files on th BIMserver");
 			this.IFCFormatCbx.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectionChanged);
@@ -483,7 +489,7 @@ namespace BimServerExchange.Forms
 			// 
 			this.IFCFormatLbl.Location = new System.Drawing.Point(5, 10);
 			this.IFCFormatLbl.Name = "IFCFormatLbl";
-			this.IFCFormatLbl.Size = new System.Drawing.Size(57, 13);
+			this.IFCFormatLbl.Size = new System.Drawing.Size(67, 13);
 			this.IFCFormatLbl.TabIndex = 17;
 			this.IFCFormatLbl.Text = "IFC Format";
 			// 
@@ -513,11 +519,6 @@ namespace BimServerExchange.Forms
 			this.RevisionsTree.TabIndex = 2;
 			this.RevisionsTree.UseCompatibleStateImageBehavior = false;
 			this.RevisionsTree.View = System.Windows.Forms.View.Details;
-			// 
-			// contextMenuStrip1
-			// 
-			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
 			// 
 			// BimServerExchangeForm
 			// 

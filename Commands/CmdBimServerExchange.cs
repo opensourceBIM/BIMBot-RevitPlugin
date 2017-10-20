@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
@@ -236,9 +237,19 @@ namespace BimServerExchange.Commands
 
 			return res;
 		}
+
+		private void OnProgress(object sender, ProgressEventArgs a)
+		{
+			//Debug.Print($"Progress at {a.Value}");
+			Form.UploadProgressbar.Invoke(new Action(() =>
+			{
+				Form.UploadProgressbar.PerformStep();
+				Form.UploadProgressbar.Update();
+			}));
+		}
 		#endregion private methods
 
-		public void ShowResultInForm(string token)
+		internal void ShowResultInForm(string token)
 		{
 			if (string.IsNullOrEmpty(token)) token = "No results";
 			Form.OutputEdt.Text = token.Replace("||", " \n");
@@ -423,16 +434,6 @@ namespace BimServerExchange.Commands
 			Form.UploadProgressbar.Value = 0;
 		}
 
-		private void OnProgress(object sender, ProgressEventArgs a)
-		{
-			//Debug.Print($"Progress at {a.Value}");
-			Form.UploadProgressbar.Invoke(new Action(() =>
-			{
-				Form.UploadProgressbar.PerformStep();
-				Form.UploadProgressbar.Update();
-			}));
-		}
-
 		internal bool CheckIfProjectnameIsUnique(string name)
 		{
 			if (string.IsNullOrEmpty(name)) return false;
@@ -523,6 +524,10 @@ namespace BimServerExchange.Commands
 			}
 
 			HideInternalRevisionColumns();
+			// resize everything to content, except the first column which has a longer header than content (number)
+			Form.RevisionsTree.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
+			Form.RevisionsTree.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.ColumnContent);
+			Form.RevisionsTree.AutoResizeColumn(2, ColumnHeaderAutoResizeStyle.ColumnContent);
 		}
 
 		internal void SelectProjectInTree(string fname)
@@ -577,7 +582,7 @@ namespace BimServerExchange.Commands
 			return tag;
 		}
 
-		public void ActivateButtons(bool set)
+		internal void ActivateButtons(bool set)
 		{
 			Form.ButtonPnl.Enabled = set;
 			Form.ProjectsPnl.Enabled = set;
@@ -589,7 +594,7 @@ namespace BimServerExchange.Commands
 			Form.CancelUploadBtn.Enabled = !set;
 		}
 
-		public void SetProgress(int val)
+		internal void SetProgress(int val)
 		{
 			if (val < 0) val = 0;
 			if (val > Form.UploadProgressbar.Maximum) val = Form.UploadProgressbar.Maximum;
@@ -598,7 +603,7 @@ namespace BimServerExchange.Commands
 			Form.UploadProgressbar.Update();
 		}
 
-		public void DoUpload()
+		internal void DoUpload()
 		{
 			// see if there is a project up and running
 			try
@@ -665,7 +670,7 @@ namespace BimServerExchange.Commands
 			}
 		}
 
-		public void SaveBimServerLink(string name)
+		internal void SaveBimServerLink(string name)
 		{
 			if (string.IsNullOrEmpty(name)) return;
 
@@ -704,6 +709,26 @@ namespace BimServerExchange.Commands
 
 				Form.IFCFormatCbx.SelectedIndex = i;
 				break;
+			}
+		}
+
+		internal void HighlightSelectedProject(TreeNode selected, TreeNodeCollection nodes=null)
+		{
+			if (null == selected || null == Form.ProjectsTree.SelectedNode) return;
+
+			if (null == nodes) nodes = Form.ProjectsTree.Nodes;
+			foreach (TreeNode node in nodes)
+			{
+				if (node == selected)
+				{
+					node.BackColor = Color.FromArgb(100, 140, 180);
+					node.ForeColor = Color.White;
+				}
+				else
+				{
+					node.BackColor = Form.ProjectsTree.BackColor;
+					node.ForeColor = Form.ProjectsTree.ForeColor;
+				}
 			}
 		}
 	}

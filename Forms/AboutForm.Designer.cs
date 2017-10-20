@@ -32,6 +32,7 @@
 			this.ButtonPnl = new System.Windows.Forms.Panel();
 			this.OktBtn = new System.Windows.Forms.Button();
 			this.MainPnl = new System.Windows.Forms.Panel();
+			this.LinkEdt = new System.Windows.Forms.LinkLabel();
 			this.CopyrightEdt = new System.Windows.Forms.TextBox();
 			this.LicenseEdt = new System.Windows.Forms.RichTextBox();
 			this.DescriptionEdt = new System.Windows.Forms.TextBox();
@@ -44,7 +45,7 @@
 			// 
 			this.ButtonPnl.Controls.Add(this.OktBtn);
 			this.ButtonPnl.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.ButtonPnl.Location = new System.Drawing.Point(0, 115);
+			this.ButtonPnl.Location = new System.Drawing.Point(0, 150);
 			this.ButtonPnl.Name = "ButtonPnl";
 			this.ButtonPnl.Size = new System.Drawing.Size(364, 31);
 			this.ButtonPnl.TabIndex = 2;
@@ -61,6 +62,7 @@
 			// 
 			// MainPnl
 			// 
+			this.MainPnl.Controls.Add(this.LinkEdt);
 			this.MainPnl.Controls.Add(this.CopyrightEdt);
 			this.MainPnl.Controls.Add(this.LicenseEdt);
 			this.MainPnl.Controls.Add(this.DescriptionEdt);
@@ -68,8 +70,20 @@
 			this.MainPnl.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.MainPnl.Location = new System.Drawing.Point(0, 0);
 			this.MainPnl.Name = "MainPnl";
-			this.MainPnl.Size = new System.Drawing.Size(364, 115);
+			this.MainPnl.Size = new System.Drawing.Size(364, 150);
 			this.MainPnl.TabIndex = 3;
+			// 
+			// LinkEdt
+			// 
+			this.LinkEdt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.LinkEdt.Location = new System.Drawing.Point(228, 102);
+			this.LinkEdt.Name = "LinkEdt";
+			this.LinkEdt.Size = new System.Drawing.Size(124, 15);
+			this.LinkEdt.TabIndex = 6;
+			this.LinkEdt.TabStop = true;
+			this.LinkEdt.Text = "License agreement";
+			this.LinkEdt.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			this.LinkEdt.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LicenseEdt_LinkClicked);
 			// 
 			// CopyrightEdt
 			// 
@@ -80,17 +94,20 @@
 			this.CopyrightEdt.ReadOnly = true;
 			this.CopyrightEdt.Size = new System.Drawing.Size(121, 13);
 			this.CopyrightEdt.TabIndex = 5;
-			this.CopyrightEdt.Text = "©ICN Solution b.v. 2018";
+			this.CopyrightEdt.Text = "ICN Solution b.v. 2018";
 			this.CopyrightEdt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.CopyrightEdt.Visible = false;
 			// 
 			// LicenseEdt
 			// 
-			this.LicenseEdt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+			this.LicenseEdt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.LicenseEdt.Location = new System.Drawing.Point(0, 102);
+			this.LicenseEdt.Enabled = false;
+			this.LicenseEdt.Location = new System.Drawing.Point(6, 126);
 			this.LicenseEdt.Name = "LicenseEdt";
 			this.LicenseEdt.ReadOnly = true;
-			this.LicenseEdt.Size = new System.Drawing.Size(358, 7);
+			this.LicenseEdt.Size = new System.Drawing.Size(346, 18);
 			this.LicenseEdt.TabIndex = 4;
 			this.LicenseEdt.Text = "";
 			this.LicenseEdt.Visible = false;
@@ -126,17 +143,17 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(364, 146);
+			this.ClientSize = new System.Drawing.Size(364, 181);
 			this.Controls.Add(this.MainPnl);
 			this.Controls.Add(this.ButtonPnl);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
-			this.MaximumSize = new System.Drawing.Size(380, 185);
+			this.MaximumSize = new System.Drawing.Size(380, 285);
 			this.MinimizeBox = false;
-			this.MinimumSize = new System.Drawing.Size(380, 185);
+			this.MinimumSize = new System.Drawing.Size(380, 220);
 			this.Name = "AboutForm";
 			this.ShowInTaskbar = false;
-			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.Text = "About Revit BIMServer Addin";
 			this.ButtonPnl.ResumeLayout(false);
 			this.MainPnl.ResumeLayout(false);
@@ -154,5 +171,6 @@
 		internal System.Windows.Forms.TextBox DescriptionEdt;
 		private System.Windows.Forms.RichTextBox LicenseEdt;
 		internal System.Windows.Forms.TextBox CopyrightEdt;
+		internal System.Windows.Forms.LinkLabel LinkEdt;
 	}
 }

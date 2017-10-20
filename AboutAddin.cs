@@ -25,11 +25,12 @@ namespace BimServerExchange
 			string revitVersion = app.SubVersionNumber;
 #endif
 			int major = 1;														// major build version
-			int minor = 0;														// minor/patch build version
-			string av = app.VersionNumber.Substring(2, 2);			// revit version indicator
-			int build = 3;														// build number
+			int minor = 0;                                        // minor/patch build version
+			int build = 6;                                        // build number
+			string av = app.VersionNumber.Substring(0, 4);			// revit version indicator
 			// show the about dialog for this addin
-			AboutForm form = new AboutForm(revitVersion, $"{major}.{minor}.{av}.{build:0000}");
+			//AboutForm form = new AboutForm(revitVersion, $"{major}.{minor}.{av}.{build:0000}");
+			AboutForm form = new AboutForm(revitVersion, $"{major}.{minor}.{build:00}.{av}");
 			form.ShowDialog();
 
 			// autocancel for now as there is no effect in Revit that needs to be committed
